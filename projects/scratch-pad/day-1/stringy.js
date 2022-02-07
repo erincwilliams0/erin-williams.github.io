@@ -15,7 +15,7 @@
 function length(string) {
     // YOUR CODE BELOW HERE //
     
-
+return string.length
 
     // YOUR CODE ABOVE HERE //
 }
@@ -26,7 +26,7 @@ function length(string) {
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
 
-
+return string.toLowerCase()
 
     // YOUR CODE ABOVE HERE //
 }
@@ -37,7 +37,8 @@ function toLowerCase(string) {
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
 
-
+// return string running touppercase
+return string.toUpperCase();
 
     // YOUR CODE ABOVE HERE //
 }
@@ -58,10 +59,15 @@ function toUpperCase(string) {
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
 
-
+    //change string to Lowercase, then use split method passing spaces followed by join method passing a dash;
+    var output = string.toLowerCase().split(" ").join("-");
+    
+    return output;
+    
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given an input String and a single character, return true if the String
@@ -77,11 +83,20 @@ function toDashCase(string) {
  */
 function beginsWith(string, char) {
     // YOUR CODE BELOW HERE //
-
-    
+    // create variable to hold first letter of string made lowercase
+    var testOne = string.toLowerCase().charAt(0)
+    // create variable with char made lowerCase
+    var testTwo = char.toLowerCase();
+    //using an if else statement compare transformed string and char parameters and return result
+    if(testOne === testTwo) {
+        return true;
+    } else {
+        return false;
+    }
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given an input String and a single character, return true if the String
@@ -97,8 +112,13 @@ function beginsWith(string, char) {
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
+    
+    // create variable to hold last character of string made lowercase and char made lowercase
+    var testOne = string.toLowerCase().charAt(string.length - 1);
+    var testTwo = char.toLowerCase();
 
-
+    //test to see if variable are strictly equal and return result
+    return testOne === testTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -111,7 +131,7 @@ function endsWith(string, char) {
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+return stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -129,10 +149,12 @@ function concat(stringOne, stringTwo) {
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-
+var result = args.join("");
+return result;
 
     // YOUR CODE ABOVE HERE //
 }
+
 
 /**
  * Given two Strings, return the longest of the two.
@@ -146,8 +168,12 @@ function join(stringOne, stringTwo) {
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
-
+    // use an if else statement to compare the length of parameter strings
+    if(stringOne.length > stringTwo.length) {
+        return stringOne;
+    } else if(stringTwo.length > stringOne.length) {
+        return stringTwo
+    }
     // YOUR CODE ABOVE HERE //
 }
 

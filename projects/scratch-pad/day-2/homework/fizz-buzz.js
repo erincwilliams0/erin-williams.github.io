@@ -12,8 +12,23 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
-
+    
+    // create for loop that starts i at 0; stops at 100; increments
+    for(let i = 1; i <= 100; i++) {
+        //use if else if chain to test each iteration for multiples of three, five, both three and five,
+        if((i % 3) === 0 && (i % 5) === 0) {
+            console.log("FizzBuzz")
+        }else if(i % 3 === 0) {
+            // log Fizz
+            console.log("Fizz")
+        } else if (i % 5 === 0) {
+            //log Buzz
+            console.log("Buzz")
+        } else {
+        // log each number that is not a multiple of three or five
+        console.log(i)
+        }
+    }
 
     // YOUR CODE GOES ABOVE HERE //
 }

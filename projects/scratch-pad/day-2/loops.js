@@ -12,8 +12,12 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
-  
+   //create a for loop to iterate over an array and print each value
+   for(let i = 0; i < array.length; i++) //set starting point to 0 end point to < array.length and increment
+  {
+    // console.log array[i] for each iteration
+    console.log(array[i]);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -25,8 +29,12 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
-  
-  
+  // create a for loop to iterate thourgh an array
+  for(let i = array.length - 1; i >= 0; i--) // start at i = array.length - 1; end at 0; decrement
+  {
+    // log value at each iteration
+    console.log(array[i])
+  }
   
   
   // YOUR CODE ABOVE HERE //

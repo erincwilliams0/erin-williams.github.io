@@ -35,7 +35,17 @@
 
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
+    // use an if else if chain and using the logical and operator set each greeting for their proper time range 
+    if(hour >= 0 && hour <= 11) {
+        // console.log appropriate greeting
+        console.log("Good Morning!")
+    } else if (hour > 11 && hour <= 16) {
+        console.log("Good Afternoon!")
+    } else if(hour > 16 && hour <= 21) {
+        console.log("Good Evening!")
+    } else {
+        console.log("Good Night!")
+    }
     
     
     

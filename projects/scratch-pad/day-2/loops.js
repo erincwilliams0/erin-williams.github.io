@@ -45,9 +45,15 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
-  
+  // create output array
+  let output = [];
+    // use a for in loop to iterate through key/value pairs
+    for(var key in object) {
+  // push key to output for each iteration
+  output.push(key);
+    }
+    //return output array
+  return output;
   
   // YOUR CODE ABOVE HERE //
 }
@@ -58,8 +64,11 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  // create a for in loop to iterate through parameter object
+  for(var key in object) {
+    //log key for each iteration
+    console.log(key);
+  }
   
   
   // YOUR CODE ABOVE HERE //
@@ -70,8 +79,15 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  // create output variable
+  var output = [];
+    // create a for in loop to iterate through object
+    for(var key in object) {
+    // push values (object[key]) to output for each iteration
+    output.push(object[key])
+    }
+    // return output array
+  return output;
   
   
   // YOUR CODE ABOVE HERE //
@@ -83,7 +99,11 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
+  // create for in loop for object
+  for(var key in object) {
+    // log object[key] for each iteration
+    console.log(object[key])
+  }
   
   
   
@@ -95,8 +115,15 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  //create variable to hold count
+  var count = 0;
+    //use a for in loop to iterate through object
+    for(var key in object) {
+    //increment count variable each iteration
+      count += 1;
+  }
+      //return count
+  return count;
   
   
   // YOUR CODE ABOVE HERE //
@@ -108,8 +135,19 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  // create output array to index object values
+  var output = [];
+    // create a for in loop to iterate through object
+    for(var key in object) {
+    //push object[key] to output array
+      output.push(object[key]);
+  }
+      //create for loop to loop through output array
+      for(let i = output.length - 1; i >= 0; i--)//start at output.length -1, run till >= 0, decrement
+      {
+      //log output[i] for each iteration
+        console.log(output[i]);
+    }
   
   
   // YOUR CODE ABOVE HERE //

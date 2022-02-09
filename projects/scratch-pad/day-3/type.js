@@ -14,7 +14,8 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
+    // test value with array.isarray and return result;
+    return Array.isArray(value)
     
     
     
@@ -31,12 +32,23 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // use if else statement to test if value is an array, date, or null;
+    if(typeof value === null || typeof value === Date) {
+        console.log(false);
+        return false;
+    } else if(Array.isArray(value)) {
+        console.log(false);
+        return false;
+    } else if(typeof value === Object) {
+        console.log(true);
+        return true;
+    }
+    // console.log(value)
     
     
     // YOUR CODE ABOVE HERE //
 }
+console.log(isObject({}))
 
 /** 
  * Given an input value, return true if is either an Array or an an Object 

@@ -93,12 +93,35 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
+    // use a if else if else chain to test value for type
+    if(typeof value === 'string') {
+        return "string";
+    } else if(typeof value === 'boolean') {
+        return "boolean"
+    } else if(Array.isArray(value)) {
+        return "array"
+    } else if(typeof value === 'number') {
+        return "number";
+    } else if(value === null) {
+        return "null";
+    } else if(value instanceof Date) {
+        return "date"
+    } else if(typeof value === 'function') {
+        return "function"
+    } else if(value === undefined) {
+        return "undefined"
+    } else {
+        return "object"
+    }
+        // test for object last
     
     
     
     // YOUR CODE ABOVE HERE //
 }
+// console.log(typeOf(Date))
+
+
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&

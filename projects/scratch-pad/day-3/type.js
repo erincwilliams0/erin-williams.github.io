@@ -57,7 +57,15 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+    //use if else if else statement to test value type; return false for null and date; return true if object or array
+    if(typeof value === null || value instanceof Date) {
+        return false;
+    } else if(Array.isArray(value) || value instanceof Object) {
+        return true;
+    } else {
+        //return false
+        return false;
+    }
     
     
     

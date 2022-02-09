@@ -13,14 +13,16 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    return function(val) {
-        if(base > val) {
-            return false;
-        } else if(base < val) {
-            return true;
-        }
+    // return function(val) {
+    //     if(base > val) {
+    //         return false;
+    //     } else if(base < val) {
+    //         return true;
+    //     }
+    // }
+    return function(value) {
+        return value > base;
     }
-    
     
     // YOUR CODE ABOVE HERE //
 }
@@ -32,8 +34,11 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // return a function passing value as a parameter
+    return function(value) {
+        //inside nested function return val < base
+        return value < base;
+    }
     
     
     // YOUR CODE ABOVE HERE //

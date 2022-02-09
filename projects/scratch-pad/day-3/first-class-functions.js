@@ -87,8 +87,16 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
+    //create output array
+    var output = [];
+        // make for loop to loop through strings array
+        for(let i = 0; i < strings.length; i++) //start with i at zero; stop when i reaches strings array length; decrement
+        {
+        // call modify on each index of strings and push to output array
+        output.push(modify(strings[i]));
+           }
+           // return output array
+    return output;
     
     
     // YOUR CODE ABOVE HERE //
@@ -105,8 +113,19 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // create variable to hold output array if all test pass
+    var result;
+    // loop over strings array
+    for(let i = 0; i < strings.length; i++) {
+        // for each iteration call test on strings using an if statement, if false return false; if true set result to true
+        if(test(strings[i]) === false) {
+            return false;
+        }else if(test(strings[i]) === true) {
+            result = true;
+        }
+    }
+        //return result
+    return result;
     
     
     // YOUR CODE ABOVE HERE //

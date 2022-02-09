@@ -51,9 +51,12 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    // return a function that takes a string as its parameter
+    return function(str) {
+    // return 0 index of string made lowercase and test if strictly equal to startsWith made lowercase?
+    return str.toLowerCase().charAt(0) === startsWith.toLowerCase();    
+    }
+        
     
     // YOUR CODE ABOVE HERE //
 }
@@ -65,8 +68,11 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
+    // return a function that passes a string as its parameter
+    return function(str) {
+        // return last index of string made lowercase testing if strictly equal to endsWith character made lowercase
+        return str.toLowerCase().charAt(str.length - 1) === endsWith.toLowerCase();
+    }
     
     
     // YOUR CODE ABOVE HERE //

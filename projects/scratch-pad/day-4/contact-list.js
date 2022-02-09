@@ -35,7 +35,14 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
-
+// store output object in variable
+let contact = {};
+    //using dot notation make key/value pairs for id, nameFirst, and nameLast
+    contact.id = id;
+    contact.nameFirst = nameFirst;
+    contact.nameLast = nameLast;
+    // return output object
+    return contact;
 } 
 
 
@@ -43,12 +50,28 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
+        },
+        // for addContact: create a function that takes in an obj parameter and pushes it into the contacts array
+        addContact: function(contact) {
+            contacts.push(contact);
+        },
+        //findContact: create a function that takes a fullname as its parameter
+        findContact: function(fullName) {
+            //create an array of the first and last name of fullName using .split method
+            var name = fullName.split(" ");
+            // use a for loop to loop through contacts array
+            for(let i = 0; i < contacts.length; i++) {
+            //for each iteration test if 0 index of name strictly equals nameFirst, and if 1 index equals nameLast
+            if(name[0] === contacts[i].nameFirst && name[1] === contacts[i].nameLast) {
+                return contacts[i];
+            }    
+            }
         }
     }
 }

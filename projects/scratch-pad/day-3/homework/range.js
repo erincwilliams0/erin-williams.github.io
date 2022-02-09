@@ -23,8 +23,24 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
+    // create variable to hold output array
+    var output = [];
+        // create an if statement to test wheter start is greater or less than end
+        if(start < end) {
+        //start < end create for loop let i = start; stop at end; increment each iteration
+        for(let i = start; i <= end; i++) {
+            //push i to output
+            output.push(i);
+        }
+        
+    } if(start > end) {
+        //start > end for loop let i = end; stop at start; decrement each iteration
+        for(let i = start; i >= end; i--) {
+            output.push(i);
+        }
+        
+    }
+    return output;
     
     
     // YOUR CODE GOES ABOVE HERE //

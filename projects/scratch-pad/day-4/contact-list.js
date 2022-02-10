@@ -72,6 +72,17 @@ function makeContactList() {
                 return contacts[i];
             }    
             }
+        },
+        //removeContact: create a function that takes a contact object as a parameter
+        removeContact: function(contact) {
+            // loop through contacts array
+            for(let i = 0; i < contacts.length; i++) {
+            // use an if statement to test for a matching object in our contacts array
+            if(contact === contacts[i]) {
+            // remove object
+                contacts.splice(i, 1)
+            }
+            }
         }
     }
 }

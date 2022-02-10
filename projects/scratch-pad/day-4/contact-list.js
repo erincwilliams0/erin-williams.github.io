@@ -83,6 +83,20 @@ function makeContactList() {
                 contacts.splice(i, 1)
             }
             }
+        },
+        //printAllContactNames: create a function with no parameters
+        printAllContactNames: function() {
+            // create an output array
+            var output = [];
+            //create a for loop that iterates throught contacts array
+            for(let i = 0; i < contacts.length; i++) {
+                // create a variable to concat nameFirst and nameLast values then push variable into output array
+                let fullName = contacts[i].nameFirst + " " + contacts[i].nameLast;
+                output.push(fullName);
+            }
+                // return output array joined with a line break "\n"
+                return output.join("\n")
+            // console.log(output.join("\n"))
         }
     }
 }

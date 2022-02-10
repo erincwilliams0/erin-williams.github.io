@@ -33,7 +33,7 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     // use if else statement to test if value is an array, date, or null;
-    if(typeof value === null || value instanceof Date) {
+    if(value === null || value instanceof Date) {
         return false;
     } else if(Array.isArray(value)) {
         return false;
@@ -119,7 +119,7 @@ function typeOf(value) {
     
     // YOUR CODE ABOVE HERE //
 }
-// console.log(typeOf(Date))
+ //console.log(typeOf(Date))
 
 
 

@@ -19,7 +19,15 @@ return output;
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
-
+// create output array
+let output = [];
+    // for loop through object
+    for(let key in object) {
+    // push object key to output each iteration
+    output.push(key);
+    }
+// return output.join(" ")
+return output.join(" ")
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,6 +35,19 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
+    // create output array
+    let output = [];
+        // for in loop through object
+    for(let key in object) {
+        // use if statement to check if values are strings
+        if(typeof object[key] === "string") {
+        // push object values to output
+        output.push(object[key])
+        }
+    }
+    //check
+    console.log(output.join(" "))
+     return output.join(" ")
     
 }
 

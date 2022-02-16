@@ -118,8 +118,13 @@ return `${object.name.charAt(0).toUpperCase() + object.name.slice(1)} is a ${obj
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+if(object.hasOwnProperty('noises') && object.noises.length > 0) {
+    return object.noises.join(" ")
+} else {
+    return "there are no noises"
 }
+}
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////

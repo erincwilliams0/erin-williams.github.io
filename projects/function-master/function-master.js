@@ -46,7 +46,7 @@ function valuesToString(object) {
         }
     }
     //check
-    console.log(output.join(" "))
+    //console.log(output.join(" "))
      return output.join(" ")
     
 }
@@ -56,7 +56,14 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    // start if statement to test collection
+    if(Array.isArray(collection)) {
+        return "array"
+    } else {
+        return "object"
+    }
+    // if collection is an array return array
+    //else return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -64,7 +71,8 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    //return string with first letter capitalized
+    return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -72,7 +80,19 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    //create output array
+    var output = [];
+    // create input variable and assign it to string.split(" ") to get an array
+    let input = string.split(" ")
+        // for loop through input array
+    for(let i = 0; i < input.length; i++) {
+        // each iteration push transformed word to output array
+        output.push(input[i].charAt(0).toUpperCase() + input[i].slice(1))
+    }
+    console.log(output)
+    // return output.join(" ")
+    return output.join(" ")
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -80,7 +100,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+// return a string with backticks Welcome object.name with name capitalized
+return `Welcome ${object.name.charAt(0).toUpperCase() + object.name.slice(1)}!`
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -88,7 +109,8 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+// return a string with object.name is a object.species; both values must be capitalized
+return `${object.name.charAt(0).toUpperCase() + object.name.slice(1)} is a ${object.species.charAt(0).toUpperCase() + object.species.slice(1)}`
 }
 
 //////////////////////////////////////////////////////////////////////

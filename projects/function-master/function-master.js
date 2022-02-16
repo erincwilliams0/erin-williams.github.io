@@ -4,8 +4,14 @@
 
 function objectValues(object) {
 // create output array variable
+var output = [];
 // use a for in loop to iterate through object
-// 
+for(var key in object) {
+// for each iteration push object values to output
+    output.push(object[key])
+}
+//return output
+return output;
 } 
 
 //////////////////////////////////////////////////////////////////////

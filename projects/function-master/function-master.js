@@ -89,7 +89,7 @@ function capitalizeAllWords(string) {
         // each iteration push transformed word to output array
         output.push(input[i].charAt(0).toUpperCase() + input[i].slice(1))
     }
-    console.log(output)
+    //console.log(output)
     // return output.join(" ")
     return output.join(" ")
 
@@ -131,7 +131,19 @@ if(object.hasOwnProperty('noises') && object.noises.length > 0) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+// create input array from string.split(" ")
+let input = string.split(" ")
+//create output variable to hold false return
+var output = false;
+// for loop through input array
+for(let i = 0; i < input.length; i++) {
+    // each iteration use if statement to test if word === input[i]
+    if(input[i] === word) {
+        return true;
+    }
+}
+    //return appropriate boolean
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////

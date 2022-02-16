@@ -86,7 +86,20 @@ animals.push(lion);
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
+ // create a friends array
+ var friends = [];
+ // I chose an array because of it uses indexes instead of key/value pairs
 
+ // declare a function called get random that takes in the animals array as a parameter
+ function getRandom(animals) {
+   //create a variable to hold an index from our animals array using math.random
+   var random = Math.floor(Math.random() * (animals.length - 1))
+    //return variable as a index of animals
+    return animals[random];
+ }
+ friends.push(getRandom(animals).name);
+ console.log(friends);
+ animal.friends = friends;
 
 
 /**

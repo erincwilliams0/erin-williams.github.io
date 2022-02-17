@@ -201,7 +201,8 @@ var nonfriends = [];
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+object[key] = value
+return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -209,7 +210,14 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
+     // for loop through array, test if object has a property of array[i]
+    for(let i = 0; i < array.length; i++) {
+        if(object.hasOwnProperty(array[i])) {
+            delete object[array[i]]
+        }
+    }
 
+return object;
 }
 
 //////////////////////////////////////////////////////////////////////

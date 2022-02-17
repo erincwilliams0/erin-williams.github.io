@@ -151,7 +151,8 @@ for(let i = 0; i < input.length; i++) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+ object.friends.push(name);
+ return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -159,6 +160,13 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
+// use includes method and if statement to test for objects friends array and see if it contains given name
+if(object.friends && object.friends.includes(name)) {
+    return true;
+} else {
+    return false;
+}
+
 
 }
 
@@ -167,7 +175,25 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+// create output array
+var nonfriends = [];
+// loop through array
+    for(let i = 0; i < array.length; i++) {
+        // use if statement to find name's friends array and assign it to a variable
+        if(array[i].name === name) {
+            var friends = array[i].friends;
+            //console.log(friends)
+           
+        }
+    }
+    // loop through array again, testing if friends includes array[i] name, if not push to nonfriends
+    for(let i = 0; i < array.length; i++) {
+        if(friends.includes(array[i].name) !== true && array[i].name !== name) {
+            nonfriends.push(array[i].name)
+        }
+    }
+   //console.log(nonfriends) 
+   return nonfriends;
 }
 
 //////////////////////////////////////////////////////////////////////

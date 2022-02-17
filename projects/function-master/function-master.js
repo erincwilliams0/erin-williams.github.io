@@ -225,7 +225,15 @@ return object;
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+//create output array
+var output = [];
+// loop through array, test if output includes array[i], if not push array[i] to output
+for(let i = 0; i < array.length; i++) {
+    if(!output.includes(array[i])) {
+        output.push(array[i]);
+    }
+}
+return output;
 }
 
 //////////////////////////////////////////////////////////////////////

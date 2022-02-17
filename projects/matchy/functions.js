@@ -29,7 +29,17 @@
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function replace(animals, name, replacement) {
+    //for loop through animals array
+    for(let i = 0; i < animals.length; i++) {
+        // using if statement test name parameter to === animals[i].name
+        if(name === animals[i].name) {
+        //if true animals[i] = replacement
+        animals[i] = replacement;
+        }
+    }
+        
+}
 
 
 //////////////////////////////////////////////////////////////////////

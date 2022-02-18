@@ -28,15 +28,33 @@ if(x === 0 || x % 2 === 0) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function countChars(string, char) {
-
+// create count variable set to 0
+var count = 0;
+//loop through string testing if each index matches char, if true increment count variable
+for(let i = 0; i < string.length; i++) {
+  if(string[i] === char) {
+    count++
+  }
+}
+// return count
+return count;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(string) {
+// create count variable
+let count = 0;
+// loop through string test if each index is the letter B, if so increment count
+for(let i = 0; i < string.length; i++) {
+  if(string[i] === "B") {
+    count++;
+  }
+}
+//return count
+return count;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

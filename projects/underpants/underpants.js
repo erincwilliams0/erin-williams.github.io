@@ -125,7 +125,24 @@ _.first = function(arr, num) {
 */
 
 _.last = function(arr, num){
+    // create output array
+    var output = [];
+    //test arr and num parameters, if arr is not an array or num is a negative number return [], if num is undefined or nan return last index of arr, if num > arr.length return arr
+    if(!Array.isArray(arr) || num < 0) {
+        return [];
+    } else if(num === undefined || num === NaN) {
+        return arr[arr.length - 1];
+    } else {
+    // otherwise loop through arr backwards then using unshift input each index while num > 0
+    for(let i = arr.length - 1; i >= 0; i--) {
+        if(num > 0) {
+            output.unshift(arr[i]);
+            num--;
+        }
 
+    }
+    }
+    return output;
 }
 
 /** _.indexOf
@@ -144,6 +161,15 @@ _.last = function(arr, num){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(arr, value){
+    //for loop through arr, test each index === value, return value when found,  return -1 outside loop if value is not found
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === value) {
+            return i;
+        }
+    }
+    return -1;
+};
 
 /** _.contains
 * Arguments:
@@ -160,7 +186,18 @@ _.last = function(arr, num){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function(arr, value){
+    console.log(arr)
+    var output;
+    // loop through array, use ternary operator to check if arr[i] is value, return true if true, set declared variable to false if false,
+    for(let i = 0; i < arr.length; i++) {
+        return arr[i] == value ? true : false;
+    }
+    //return false variable
+    //return output;
+}
 
+console.log()
 /** _.each
 * Arguments:
 *   1) A collection

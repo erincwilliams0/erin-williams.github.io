@@ -85,6 +85,26 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(arr, num) {
+   var output = [];
+    // using if statements test arr parameter to see if its an array, if not return an empty array
+    //next test num parameter, if num is nan or undefined return zero index of array, if num is a negative number return empty array, if number is greater than array length return arr
+    if(!Array.isArray(arr) || num < 0) {
+        return [];
+    } else if(num === undefined || num === NaN) {
+        return arr[0];
+    } else if(num > arr.length) {
+        return arr;
+    } else {
+        for(let i = 0; i < arr.length; i++) {
+            if(num > 0) {
+                output.push(arr[i]);
+                num--;
+            }
+        }
+    }
+    return output;
+}
 
 /** _.last
 * Arguments:
@@ -104,6 +124,9 @@ _.typeOf = function(value){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(arr, num){
+
+}
 
 /** _.indexOf
 * Arguments:

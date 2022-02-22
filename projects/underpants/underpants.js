@@ -386,6 +386,15 @@ _.map = function(collect, action){
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 
+_.pluck = function(arr, prop){
+    //output array
+    var output = [];
+    //loop through arr, push the value of prop to output for each iteration through array
+    for(let i = 0; i < arr.length; i++) {
+        output.push(arr[i][prop])
+    } 
+    return output;
+}
 
 /** _.every
 * Arguments:
@@ -408,6 +417,25 @@ _.map = function(collect, action){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collect, action){
+    //create variable to hold true output
+    var output = true;
+    // determine if collect is an array or object, loop through collect testing action on collect, if test results in false return false, else return output
+    if(Array.isArray(collect)) {
+        for(let i = 0; i < collect.length; i++) {
+            if(!action(collect[i], i, collect)) {
+                return false;
+            }
+        }
+    } else if(collect instanceof Object) {
+        for(var key in collect) {
+            if(!action(collect[key], key, collect)) {
+                return false;
+            }
+        }
+    }
+    return output;
+}
 
 /** _.some
 * Arguments:

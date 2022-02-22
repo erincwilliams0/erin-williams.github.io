@@ -511,6 +511,15 @@ _.some = function(collect, action){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(arr, action, seed){
+     //console.log(seed);
+    var result = seed !== undefined ? seed: arr[0];
+    //loop through array, determine if seed is undefined, true set seed to arr[0]; update seed as result of calling action on each iteration, after final iteration return seed
+    for(let i = 0; i < arr.length; i++){
+        result = action(result, arr[i], i);
+    }
+     return result;
+}
 
 /** _.extend
 * Arguments:

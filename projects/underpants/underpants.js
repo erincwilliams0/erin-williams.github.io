@@ -421,19 +421,27 @@ _.every = function(collect, action){
     //create variable to hold true output
     var output = true;
     // determine if collect is an array or object, loop through collect testing action on collect, if test results in false return false, else return output
+    // determine if action is not a function, if not then determine each iteration if collect is truthy/falsy
     if(Array.isArray(collect)) {
-        for(let i = 0; i < collect.length; i++) {
-            if(!action(collect[i], i, collect)) {
+        for(let i = 0; i < collect.length; i++) {if(!action){
+            if(!collect[i]){
                 return false;
             }
-        }
-    } else if(collect instanceof Object) {
-        for(var key in collect) {
-            if(!action(collect[key], key, collect)) {
-                return false;
-            }
+        } else if(!action(collect[i], i, collect)){
+            return false;
         }
     }
+    } else if(collect instanceof Object) {
+     for(let key in collect){
+        if(!action){
+           if(!collect[key]){
+            return false;
+           }
+       } else if(!action(collect[key], key, collect)){
+        return false;
+       }
+    }
+}
     return output;
 }
 
@@ -458,6 +466,31 @@ _.every = function(collect, action){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function(collect, action){
+    //determine if collect is an array or object, loop through collect calling action to test each iteration, 1st true result return true; else return false outside loops
+    if(Array.isArray(collect)) {
+        for(let i = 0; i < collect.length; i++){
+            if(!action){
+                if(collect[i]){
+                    return true;
+                }
+            } else if(action(collect[i], i, collect)){
+                return true;
+            }
+        }
+    } else if(collect instanceof Object){
+        for(let key in collect){
+        if(!action){
+            if(collect[key]){
+                return true;
+            }
+        } else if(action(collect[key], key, collect)){
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 /** _.reduce
 * Arguments:

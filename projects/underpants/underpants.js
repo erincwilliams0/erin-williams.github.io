@@ -3,6 +3,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
+
+
 var _ = {};
 
 
@@ -187,14 +189,11 @@ _.indexOf = function(arr, value){
 */
 
 _.contains = function(arr, value){
-    console.log(arr)
-    var output;
-    // loop through array, use ternary operator to check if arr[i] is value, return true if true, set declared variable to false if false,
-    for(let i = 0; i < arr.length; i++) {
-        return arr[i] == value ? true : false;
+    // using ternary operator test if arr includes value, return true or false
+    if(value === undefined) {
+        return false;
     }
-    //return false variable
-    //return output;
+    return arr.includes(value) ? true : false;   
 }
 
 console.log()
@@ -214,6 +213,17 @@ console.log()
 *      -> should log "a" "b" "c" to the console
 */
 
+_.each = function(collection, action){
+    if(Array.isArray(collection)) {
+        for(var i = 0; i < collection.length; i++) {
+            action(collection[i], i, collection);
+        }
+    } else {
+        for (var key in collection) {
+            action(collection[key], key, collection);
+        }
+    }
+}
 
 /** _.unique
 * Arguments:
@@ -225,6 +235,17 @@ console.log()
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(arr){
+    // create variable to hold output
+    var output = [];
+    // loop through arr, test if output includes arr[i], if not push array value to output
+    for(let i = 0; i < arr.length; i++) {
+        if(!output.includes(arr[i])) {
+            output.push(arr[i])
+        }
+    }
+    return output;
+}
 
 /** _.filter
 * Arguments:
@@ -242,6 +263,19 @@ console.log()
 *   use _.each in your implementation
 */
 
+_.filter = function(arr, action){
+   // create output array
+   var output = [];
+   // loop through arr, test calling action on arr passing parameters arr[i], i, arr,
+   for(let i = 0; i < arr.length; i++) { 
+   //if true push to output arr
+    if(action(arr[i], i, arr)) {
+        output.push(arr[i])
+    }
+   }
+   //return output
+   return output;
+}
 
 /** _.reject
 * Arguments:
@@ -256,6 +290,20 @@ console.log()
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject = function(arr, action){
+    // copy exact same code for filter but add a bang operator in the conditional statement
+     // create output array
+   var output = [];
+   // loop through arr, test calling action on arr passing parameters arr[i], i, arr,
+   for(let i = 0; i < arr.length; i++) { 
+   //if true push to output arr
+    if(!action(arr[i], i, arr)) {
+        output.push(arr[i])
+    }
+   }
+   //return output
+   return output;
+}
 
 /** _.partition
 * Arguments:
@@ -276,6 +324,22 @@ console.log()
 }
 */
 
+_.partition = function(arr, action){
+    // create an output array with two nested arrays inside
+    var output = [[],[]]
+    // loop through array, test arr by calling action(arr[i], i, arr)
+    for(let i = 0; i < arr.length; i++) {
+    //if true push arr[i] into output[0]
+    //if not push arr[i] into output[1]
+        if(action(arr[i], i, arr)) {
+            output[0].push(arr[i])
+        } else {
+            output[1].push(arr[i])
+        }
+    }
+    // return output;
+    return output;
+}
 
 /** _.map
 * Arguments:
@@ -293,6 +357,23 @@ console.log()
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collect, action){
+    // output array
+    var output = [];
+    // test collection for array or object
+    if(Array.isArray(collect)) {
+    // push the result of calling action on collection to output
+        for(let i = 0; i < collect.length; i++) {
+            output.push(action(collect[i], i, collect))
+        }
+    } else if(collect instanceof Object) {
+        for(var key in collect) {
+            output.push(action(collect[key], key, collect))
+        }
+    }
+    // return output
+    return output;
+}
 
 /** _.pluck
 * Arguments:

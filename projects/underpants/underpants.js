@@ -423,7 +423,8 @@ _.every = function(collect, action){
     // determine if collect is an array or object, loop through collect testing action on collect, if test results in false return false, else return output
     // determine if action is not a function, if not then determine each iteration if collect is truthy/falsy
     if(Array.isArray(collect)) {
-        for(let i = 0; i < collect.length; i++) {if(!action){
+        for(let i = 0; i < collect.length; i++) {
+        if(!action){
             if(!collect[i]){
                 return false;
             }
@@ -513,8 +514,9 @@ _.some = function(collect, action){
 
 _.reduce = function(arr, action, seed){
      //console.log(seed);
+     //console.log(action)
     var result = seed !== undefined ? seed: arr[0];
-    //loop through array, determine if seed is undefined, true set seed to arr[0]; update seed as result of calling action on each iteration, after final iteration return seed
+    //loop through array setting result = invoking action 
     for(let i = 0; i < arr.length; i++){
         result = action(result, arr[i], i);
     }
@@ -536,6 +538,17 @@ _.reduce = function(arr, action, seed){
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
+_.extend = function(...inputs){
+    var output = inputs[0]
+    // loop through inputs, 
+    for(let i = 0; i < inputs.length; i++){
+        for(let key in inputs[i]){
+            output[key] = inputs[i][key]
+        }
+        
+    } 
+    return output;
+}
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

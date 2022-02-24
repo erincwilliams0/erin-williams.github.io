@@ -515,12 +515,17 @@ _.some = function(collect, action){
 _.reduce = function(arr, action, seed){
      //console.log(seed);
      //console.log(action)
-    var result = seed !== undefined ? seed: arr[0];
-    //loop through array setting result = invoking action 
-    for(let i = 0; i < arr.length; i++){
-        result = action(result, arr[i], i);
+    if(seed === undefined) {
+        seed = arr[0];
+        for(let i = 1; i < arr.length; i++){
+            seed = action(seed, arr[i], i);
+        }
+    } else {
+        for(let i = 0; i < arr.length; i++){
+            seed = action(seed, arr[i], i)
+        }
     }
-     return result;
+     return seed;
 }
 
 /** _.extend
@@ -540,7 +545,7 @@ _.reduce = function(arr, action, seed){
 
 _.extend = function(...inputs){
     var output = inputs[0]
-    // loop through inputs, 
+    // loop through inputs, then for in loop through current index in inputs, assign for each key in index assign property to output object; return object
     for(let i = 0; i < inputs.length; i++){
         for(let key in inputs[i]){
             output[key] = inputs[i][key]

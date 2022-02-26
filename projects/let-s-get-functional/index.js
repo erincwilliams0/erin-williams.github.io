@@ -28,8 +28,18 @@ var maleCount = function(array) {
     return males.length;
 };
 
-var femaleCount;
+var femaleCount = function(array){
+    var tally = _.reduce(array, function(count, object) {
+        // check object.gender to see if it strictly equals female, if so increase tally
+        if(object.gender === "female") {
+            count++
+        }
+        return count;
+    }, 0)
+    return tally;
+};
 
+console.log(femaleCount(customers));
 var oldestCustomer;
 
 var youngestCustomer;

@@ -49,10 +49,16 @@ var oldestCustomer = function(arr){
 };
 
 var youngestCustomer = function(arr){
-    var 
+    var youngThug = _.reduce(arr, function(youngest, test){
+        if(youngest.age < test.age) return youngest;
+        return test;
+    })
+        return youngThug.name;
 };
 
-var averageBalance;
+var averageBalance = function(array){
+    
+};
 
 var firstLetterCount;
 

@@ -196,7 +196,7 @@ _.contains = function(arr, value){
     return arr.includes(value) ? true : false;   
 }
 
-console.log()
+
 /** _.each
 * Arguments:
 *   1) A collection

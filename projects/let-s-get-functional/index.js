@@ -56,9 +56,10 @@ var youngestCustomer = function(arr){
         return youngThug.name;
 };
 
-var averageBalance = function(array){
-    
+var averageBalance = function(arr){
+  
 };
+
 
 var firstLetterCount;
 

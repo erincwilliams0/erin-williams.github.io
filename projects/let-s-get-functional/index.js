@@ -41,19 +41,19 @@ var femaleCount = function(array){
 
 
 var oldestCustomer = function(arr){
-    var oldSpice = _.reduce(arr, function(oldest, test){
+    var old = _.reduce(arr, function(oldest, test){
         if(oldest.age > test.age) return oldest;
         return test;
     })
-    return oldSpice.name;
+    return old.name;
 };
 
 var youngestCustomer = function(arr){
-    var youngThug = _.reduce(arr, function(youngest, test){
+    var young = _.reduce(arr, function(youngest, test){
         if(youngest.age < test.age) return youngest;
         return test;
     })
-        return youngThug.name;
+        return young.name;
 };
 
 var averageBalance = function(arr){

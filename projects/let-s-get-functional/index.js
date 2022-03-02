@@ -68,7 +68,17 @@ var averageBalance = function(arr){
 };
 
 
-var firstLetterCount;
+var firstLetterCount = function(arr, char){
+    // reduce: pass in count and current element, if the first letter of customer name === char increment count, return count
+    var custompass = _.reduce(arr, function(count, curr){
+        if(char.toUpperCase() === curr.name.charAt(0).toUpperCase()){
+            count++
+        }
+        return count;
+    }, 0)
+    return custompass;
+};
+console.log(firstLetterCount(customers, "d"))
 
 var friendFirstLetterCount;
 

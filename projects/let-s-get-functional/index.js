@@ -57,7 +57,14 @@ var youngestCustomer = function(arr){
 };
 
 var averageBalance = function(arr){
-  
+    //parseFloat(arr[0].balance.replace("$", "").replace(",", ""))
+    var totalsnum = _.map(arr, function(customer){
+       return parseFloat(customer.balance.replace("$","").replace(",", ""));
+    })
+  var total = _.reduce(totalsnum, function(balance, curr){
+      return balance + curr;
+  })
+  return total / totalsnum.length;
 };
 
 

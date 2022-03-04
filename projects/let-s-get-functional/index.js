@@ -70,20 +70,38 @@ var averageBalance = function(arr){
 
 var firstLetterCount = function(arr, char){
     // reduce: pass in count and current element, if the first letter of customer name === char increment count, return count
-    var custompass = _.reduce(arr, function(count, curr){
+    var customtest = _.reduce(arr, function(count, curr){
         if(char.toUpperCase() === curr.name.charAt(0).toUpperCase()){
             count++
         }
         return count;
     }, 0)
-    return custompass;
+    return customtest;
 };
-console.log(firstLetterCount(customers, "d"))
 
-var friendFirstLetterCount;
 
-var friendsCount;
+var friendFirstLetterCount = function(arr, customer, char){
+    var getCustomer = _.filter(arr, function(elem){
+        if(elem.name === customer){
+            return elem;
+        }
+    })
+    
+    var testcount = _.reduce(getCustomer[0].friends, function(count, curr){
+        if(char.toUpperCase() === curr.name.charAt(0).toUpperCase()){
+            count++
+        }
+        return count;
+    }, 0) 
+    return testcount;
+};
 
+var friendsCount = function(arr, name){
+    //output, return an array of names of customer who's friends array contains the given name
+    //use filter
+};
+
+console.log(friendsCount(customers, "Olga Newton"))
 var topThreeTags;
 
 var genderCount;

@@ -2,8 +2,28 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
-
+function range(start, end, step) {
+  //edge: start === end return []; include step, increment or decrement count; if step undefined step = 1
+  var output = [];
+  if(start === end){
+    return output;
+  } 
+  if(step < 1){
+    return [];
+  } else if(step > 1){
+    for(let i = start; i <= end; i += step){
+      output.push(i);
+    }
+    } else if(step === undefined){
+      for(let i = start; i <= end; i++){
+        output.push(i);
+      }
+    }
+  
+  // use for loop inputting start and end parameters increasing by step each time
+    //push i into output array each iteration
+   
+    return output;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

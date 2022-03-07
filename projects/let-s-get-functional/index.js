@@ -97,8 +97,14 @@ var friendFirstLetterCount = function(arr, customer, char){
 };
 
 var friendsCount = function(arr, name){
-    //output, return an array of names of customer who's friends array contains the given name
-    //use filter
+    var hasFriends = _.map(arr, function(customer){
+        return {
+            name: customer.name,
+            friends: customer.friends
+        }
+    })
+    //console.log(hasFriends);
+    
 };
 
 console.log(friendsCount(customers, "Olga Newton"))

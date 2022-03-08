@@ -96,21 +96,27 @@ var friendFirstLetterCount = function(arr, customer, char){
     return testcount;
 };
 
-var friendsCount = function(arr, name){
-    var hasFriends = _.map(arr, function(customer){
-        return {
-            name: customer.name,
-            friends: customer.friends
-        }
-    })
-    //console.log(hasFriends);
-    
-};
+var friendsCount;
 
-console.log(friendsCount(customers, "Olga Newton"))
 var topThreeTags;
 
-var genderCount;
+var genderCount = function(arr){
+    // use reduce to create an object to hold tally
+   var genders = _.map(arr, function(curr){
+       return curr.gender;
+   })
+   
+   var genderTally = _.reduce(genders, function(tally, curr){
+       if(tally[curr]) {
+           tally[curr] += 1
+       } else {
+           tally[curr] = 1
+       }
+       return tally
+   }, {})
+   return genderTally;
+};
+console.log(genderCount(customers))
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

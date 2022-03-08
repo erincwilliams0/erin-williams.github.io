@@ -96,27 +96,37 @@ var friendFirstLetterCount = function(arr, customer, char){
     return testcount;
 };
 
-var friendsCount;
+var friendsCount = function(arr, name){
+    //filter through arr checking each friends list for given name
+    var gotFriend = _.filter(arr, function(curr){
+        for(let i = 0; i < curr.friends.length; i++){
+            if(curr.friends[i].name === name){
+                return curr;
+            }
+        }
+    })
+    var output = _.map(gotFriend, function(curr){
+        return curr.name;
+    })
+    return output;
+};
+console.log(friendsCount(customers, "Olga Newton"))
 
 var topThreeTags;
 
 var genderCount = function(arr){
     // use reduce to create an object to hold tally
-   var genders = _.map(arr, function(curr){
-       return curr.gender;
-   })
-   
-   var genderTally = _.reduce(genders, function(tally, curr){
-       if(tally[curr]) {
-           tally[curr] += 1
+   var genderTally = _.reduce(arr, function(tally, curr){
+       if(tally[curr.gender]) {
+           tally[curr.gender] += 1
        } else {
-           tally[curr] = 1
+           tally[curr.gender] = 1
        }
        return tally
    }, {})
    return genderTally;
 };
-console.log(genderCount(customers))
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

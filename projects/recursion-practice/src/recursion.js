@@ -79,11 +79,29 @@ var sumBelow = function(n) {
   }
 };
 
-/* sumBelow(10) does 1+2+3+4+5+6+7+8+9 */
+
 
 // 6. Get the integers in range (x, y).
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
-var range = function(x, y) {
+var range = function(x, y, output=[]) {
+  //base
+  if(x === y){
+    console.log(output);
+    return output
+  }
+  //recursive
+    // if x < y increment x and push it to output array; if x > y decrement x and push it to output array
+    if(x < y){
+      if((x + 1) !== y){
+        output.push(x + 1)
+      }
+      return range(x + 1, y, output)
+    } else if(x > y){
+      if((x - 1) !== y){
+        output.push(x - 1);
+      }
+      return range(x - 1, y, output)
+    }
 };
 
 // 7. Compute the exponent of a number.

@@ -86,7 +86,6 @@ var sumBelow = function(n) {
 var range = function(x, y, output=[]) {
   //base
   if(x === y){
-    console.log(output);
     return output
   }
   //recursive
@@ -146,6 +145,13 @@ var powerOfTwo = function(n) {
 
 // 9. Write a function that accepts a string a reverses it.
 var reverse = function(string) {
+  // console.log(string.slice(0, string.length -1))
+  //base
+  if(string.length === 1) {
+    return string[0];
+  }
+  //recursion
+  return string[string.length - 1] + reverse(string.slice(0, string.length - 1))
 };
 
 // 10. Write a function that determines if a string is a palindrome.

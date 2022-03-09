@@ -156,8 +156,25 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  string = string.replace(/\s+/g, "")
+  //base
+    if(string.length === 1){
+      return true;
+    }  else if(string.length === 2){
+      return string[0].toLowerCase() === string[1].toLowerCase();
+    }
+  //recursive
+    // put in if statement to take out spaces; maybe set a variable to the string to use for comparison?
+    
+    if(string[0].toLowerCase() === string[string.length - 1].toLowerCase()){
+      return palindrome(string.slice(1, -1))
+    } else {
+      return false;
+    }
+    
 };
 
+console.log(palindrome("race caR"))
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
 // modulo(5,2) // 1

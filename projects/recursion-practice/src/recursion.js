@@ -216,6 +216,23 @@ var gcd = function(x, y) {
 // compareStr('', '') // true
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+    // return false if string lengths do not match
+    
+  //base
+  if(!str1.length && !str2.length){
+    return true;
+  }
+    //compare zero indexes when length is 1 for both strings
+    if(str1.length === 1 && str2.length === 1){
+      return str1[0] === str2[0];
+    }
+  //recursive
+    // compare zero indexes to see if they match; return false if not; if true call function on strings with 0 indexes sliced off
+    if(str1[0] === str2[0]){
+      return compareStr(str1.slice(1), str2.slice(1))
+    } else{
+      return false;
+    }
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter

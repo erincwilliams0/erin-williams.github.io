@@ -403,11 +403,21 @@ var flatten = function(arrays) {
 
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
-var letterTally = function(str, obj) {
+var letterTally = function(str, obj={}) {
   //base
-
+    // if str is an empty string return obj
+    if(!str.length){
+      return obj;
+    }
   //recursive
-    //
+    //check if obj[str[0]] exist; if it doesnt assign it a value of 1, else increment the value; call the function removing the first element of str
+    if(obj[str[0]]){
+      obj[str[0]] += 1
+    } else{
+      obj[str[0]] = 1
+    }
+    
+    return letterTally(str.slice(1), obj)
 };
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated
@@ -415,7 +425,21 @@ var letterTally = function(str, obj) {
 // elements should not be changed.
 // Example: compress([1, 2, 2, 3, 4, 4, 5, 5, 5]) // [1, 2, 3, 4, 5]
 // Example: compress([1, 2, 2, 3, 4, 4, 2, 5, 5, 5, 4, 4]) // [1, 2, 3, 4, 2, 5, 4]
-var compress = function(list) {
+var compress = function(list, output=[]) {
+  //base
+    //if list is an empty array return output
+    if(!list.length){
+      return output;
+    }
+  //recursive
+    // test if the zero index of list is equal to the zero index of output array, if not push value into output; call function removing list[0]
+    if(!output.length || list[0] !== output[output.length - 1]){
+      output.push(list[0]);
+      return compress(list.slice(1), output)
+    } else if(list[0] === output[output.length - 1]){
+      return compress(list.slice(1), output)
+    }
+    
 };
 
 // 32. Augment every element in a list with a new value where each element is an array

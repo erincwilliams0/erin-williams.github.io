@@ -60,7 +60,18 @@ return output;
 ////////////////////////////////////////////////////////////////////////////////
 
 function reverseArrayInPlace(arr) {
-  // reverse 
+  //edge reverse empty array
+  if(!arr.length){
+    return [];
+  } 
+  // loop over half the array using math.floor?
+   for(let i = 0; i < Math.floor(arr.length / 2); i++){
+    let hold = arr[i];
+    arr[i] = arr[arr.length - 1 - i];
+    arr[arr.length - 1 - i] = hold;
+  }
+  // each iteration assign arr[i] = arr[arr.length - 1 - i] and arr[arr.length - 1 - i] = arr[i]
+  return arr;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

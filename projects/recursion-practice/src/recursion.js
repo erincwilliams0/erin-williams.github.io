@@ -538,8 +538,7 @@ var numToText = function(str, output=[]) {
   
   return numToText(str.split(" ").slice(1).join(" "), output)
 };
-//console.log(str.split(" ").slice(1).join(" "))
-  //output.push(str.split(" ")[0])
+
 
 // *** EXTRA CREDIT ***
 

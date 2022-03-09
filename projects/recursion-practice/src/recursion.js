@@ -174,7 +174,6 @@ var palindrome = function(string) {
     
 };
 
-console.log(palindrome("race caR"))
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
 // modulo(5,2) // 1
@@ -187,6 +186,15 @@ var modulo = function(x, y) {
 // JavaScript's Math object.
 // ATTENTION DO NOT LEAVE COMMENTS IN THIS FUNCTION. The test is looking for any ('/').
 var multiply = function(x, y) {
+  
+  if(y === 0 || x === 0){
+    return 0;
+  }
+ if(y > 0){
+    return x + multiply(x, y - 1)
+  } else if(y < 0){
+    return -x + multiply(x, y + 1)
+  } 
 };
 
 // 13. Write a function that divides two numbers without using the / operator  or

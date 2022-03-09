@@ -451,16 +451,61 @@ var augmentElements = function(array, aug) {
 // 33. Reduce a series of zeroes to a single 0.
 // minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
 // minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
-var minimizeZeroes = function(array) {
+var minimizeZeroes = function(array, output=[]) {
+  //base
+    // if array is an empty array, return output
+    if(!array.length){
+      return output;
+    }
+  //recursive
+    //test if both the zero index of array, and last index of output is equal to zero; if not push array[0] to output; call function removing array[0]
+    if(array[0] === 0 && output[output.length - 1] === 0){
+      return minimizeZeroes(array.slice(1), output)
+    } else{
+      output.push(array[0]);
+      return minimizeZeroes(array.slice(1), output)
+    }
 };
 
 // 34. Alternate the numbers in an array between positive and negative regardless of
 // their original sign.  The first number in the index always needs to be positive.
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
-var alternateSign = function(array) {
+var alternateSign = function(array, output=[]) {
+  //base
+  if(!array.length){
+    return output;
+  }
+  //recursive
+    // if output is empty and array[0] > 0, push zero index to output; else if array[0] < 0, push to output with sign flipped
+    if(!output.length){
+      if(array[0] > 0){
+        output.push(array[0]);
+        return alternateSign(array.slice(1), output)
+      } else if(array[0] < 0){
+        output.push(-array[0]);
+        return alternateSign(array.slice(1), output)
+      }
+    } else if(output[output.length - 1] > 0){
+      if(array[0] < 0){
+        output.push(array[0]);
+        return alternateSign(array.slice(1), output)
+      } else if(array[0] > 0){
+        output.push(-array[0]);
+        return alternateSign(array.slice(1), output)
+      }
+  } else if(output[output.length - 1] < 0){
+    if(array[0] > 0){
+      output.push(array[0]);
+        return alternateSign(array.slice(1), output)
+    } else if(array[0] < 0){
+      output.push(-array[0]);
+        return alternateSign(array.slice(1), output)
+    }
+  }
 };
 
+console.log(alternateSign([2,7,8,3,1,4]))
 // 35. Given a string, return a string with digits converted to their word equivalent.
 // Assume all numbers are single digits (less than 10).
 // numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"

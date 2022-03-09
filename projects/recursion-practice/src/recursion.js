@@ -296,11 +296,16 @@ var countOccurrence = function(array, value, count=0) {
 
 // 20. Write a recursive version of map.
 // rMap([1,2,3], timesTwo); // [2,4,6]
-var rMap = function(array, callback) {
+var rMap = function(array, callback, output=[]) {
   //base
-
+    // if array is an empty array return output
+    if(!array.length){
+      return output;
+    }
   //recursive
-    //
+    //push the value of calling the callback function of array[0] into output array; call function removing array[0]
+    output.push(callback(array[0]));
+    return rMap(array.slice(1), callback, output)
 };
 
 // 21. Write a function that counts the number of times a key occurs in an object.
@@ -335,18 +340,48 @@ var fibonacci = function(n) {
 // nthFibo(5); // 5
 // nthFibo(7); // 13
 // nthFibo(3); // 2
-var nthFibo = function(n) {
+var nthFibo = function(n, output=[0, 1]) {
+  //edge
+  if(n < 0){
+    return null;
+  }
+  //base
+  if(n === 0){
+    return output[0]
+  }
+  //recursive
+    //push the result of adding the first 2 elements in the output array; call function decrementing n and removing the first element of the output array
+    output.push(output[0] + output[1]);
+    return nthFibo(n - 1, output.slice(1))
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.
 // var words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
-var capitalizeWords = function(input) {
+var capitalizeWords = function(input, output=[]) {
+  //base
+    // if input is an empty array return output
+    if(!input.length){
+      return output;
+    }
+  //recursive
+    // push first element of input array to output array capitalized; call function with first element of input removed
+    output.push(input[0].toUpperCase());
+    return capitalizeWords(input.slice(1), output)
 };
 
 // 27. Given an array of strings, capitalize the first letter of each index.
 // capitalizeFirst(['car', 'poop', 'banana']); // ['Car', 'Poop', 'Banana']
-var capitalizeFirst = function(array) {
+var capitalizeFirst = function(array, output=[]) {
+  //base
+    //if array is an empty array return output
+    if(!array.length){
+      return output;
+    }
+  //recursive
+    //push the first element of array into output with first character capitalized; call function with first element of array removed
+    output.push(array[0].charAt(0).toUpperCase() + array[0].slice(1));
+    return capitalizeFirst(array.slice(1), output)
 };
 
 // 28. Return the sum of all even numbers in an object containing nested objects.
@@ -369,6 +404,10 @@ var flatten = function(arrays) {
 // 30. Given a string, return an object containing tallies of each letter.
 // letterTally('potato'); // {'p':1, 'o':2, 't':2, 'a':1}
 var letterTally = function(str, obj) {
+  //base
+
+  //recursive
+    //
 };
 
 // 31. Eliminate consecutive duplicates in a list.  If the list contains repeated

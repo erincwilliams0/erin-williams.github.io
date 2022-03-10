@@ -129,13 +129,25 @@ function nth(list, num) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual(val1, val2) {
-  // first use conditional and test for deep equal
- if((typeof val1 === 'object' && val1 !== null)&&(typeof val2 === 'object' && val2 !== null)){
-  
- }else {
-   return val1 === val2
- }
+function deepEqual(x, y) {
+  if(typeof x !== 'object' && typeof y !== 'object'){
+    return x === y;
+  } 
+  if(typeof x !== 'object' || typeof y !== 'object'){
+    return false;
+  }
+  let xKeys = Object.keys(x);
+  let yKeys = Object.keys(y);
+
+  if(xKeys.length !== yKeys.length){
+    return false;
+  }
+  for(let i = 0; i < xKeys.length; i++){
+    if(!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
+      return false;
+    }
+  }
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

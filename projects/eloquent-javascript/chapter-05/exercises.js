@@ -39,7 +39,7 @@ function every() {
 
 function dominantDirection(str) {
 // remove spaces from input str
-  let newStr = str.replace(" ", "");
+  let newStr = str;
   // create arrays for each direction
 let ltr = [];
 let rtl = [];

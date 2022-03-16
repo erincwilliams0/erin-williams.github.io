@@ -112,7 +112,9 @@ var friendsCount = function(arr, name){
 };
 console.log(friendsCount(customers, "Olga Newton"))
 
-var topThreeTags;
+var topThreeTags = function(arr){
+    
+};
 
 var genderCount = function(arr){
     // use reduce to create an object to hold tally

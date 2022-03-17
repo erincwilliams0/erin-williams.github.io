@@ -113,7 +113,17 @@ var friendsCount = function(arr, name){
 console.log(friendsCount(customers, "Olga Newton"))
 
 var topThreeTags = function(arr){
-    
+    var tagobj = arr.reduce((tally, curr) => {
+        //loop through curr.tags
+        for(let i = 0; i < curr.tags.length; i++){
+            if(!tally[curr.tags[i]]){
+                tally[curr.tags[i]] = 1
+            } else {
+                tally[curr.tags[i]] += 1
+            }
+        }
+       return tally;
+     }, {});
 };
 
 var genderCount = function(arr){

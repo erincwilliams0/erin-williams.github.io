@@ -110,10 +110,10 @@ var friendsCount = function(arr, name){
     })
     return output;
 };
-console.log(friendsCount(customers, "Olga Newton"))
+
 
 var topThreeTags = function(arr){
-    var tagobj = arr.reduce((tally, curr) => {
+    var tagobj = _.reduce(arr, (tally, curr) => {
         //loop through curr.tags
         for(let i = 0; i < curr.tags.length; i++){
             if(!tally[curr.tags[i]]){
@@ -124,8 +124,17 @@ var topThreeTags = function(arr){
         }
        return tally;
      }, {});
+     var topThree = Object.entries(tagobj).sort((a, b) => {
+       return b[1] - a[1]
+    }).slice(0, 3);
+    console.log(topThree)
+    var output = _.map(topThree, ((curr) => {
+        return curr[0];
+    }));
+    return output;
 };
 
+console.log(topThreeTags(customers))
 var genderCount = function(arr){
     // use reduce to create an object to hold tally
    var genderTally = _.reduce(arr, function(tally, curr){

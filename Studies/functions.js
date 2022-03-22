@@ -1,12 +1,32 @@
 /**
  * FUNCTIONS:
- * 
- * 
+ * 0. Using functions can be broken down into two steps, defining and executing a function.
+ Defining consist of declaring what inputs your function will take as well as the instructions
+ the function will carry out. Executing or calling/invoking a function is done by inputting 
+ the function name followed by parenthesis containging any arguments to be passed to the function.
+ * 1. Parameters are named place holders enclosed in parenthesis after the function name, arguments
+ are the actual values passed in during a function call.
+ * 2. All function declarations or function statements are considered named functions. Defining a 
+ name function consists of the function keyword followed by a name and parenthesis enclosing 
+ parameters, and ending with a code block containing the instructions to carry out during 
+ execution.
+ * 3. Another method to defining functions are function expressions. The main difference between
+ function declaration and function expressions is the function name can be omitted in the latter. 
+ Unlike function declarations, function expressions are not hoisted. Function expressions are generally
+ assigned to a varaible, however an IIFE(Immediately Invoked Function Expression) is called as soon as 
+ it is defined and is considered a function expression.
+ * 4. Functions have access to the scope that they are defined in, as well as any parent scopes. 
+ When defined in the global scope the function has access to all variable declared in the global scope.
+ A nested function has access to all variables in the parent and global scope, however variables declared
+ in a nested function cannot be accessed in its parent scope or the global scope.
+ * 5. Any time a function is defined it forms a closure. When a function is defined in the scope of a parent 
+ function it has access to all the variable declared in the parent scope. Closure can retain access to an outer 
+ functions variables even after invoking the function.
  */
 
 // DEFINING AND EXECUTION //
 /* Functions are used in two phases, defining a function and executing a function. 
-In order to define a function  you must first input the "function" keywor followed by
+In order to define a function  you must first input the "function" keyword followed by
 parenthesis, then ending with a function statement or code block wrapped in curly 
 brackets. Executing a function, also known as calling or invoking a function involves
 inputting the function name followed by parenthesis.
@@ -44,12 +64,15 @@ function declare() {
 // FUNCTION EXPRESSIONS //
 /* There are anonymous functions created by function expression. A function expression can refer to 
 a function that is stored in a variable. Anonymous functions can be passed into other functions as
-arguments or even returned from functions.
+arguments. An immediately invoked function expression is wrapped in parenthesis and is called immediately.
 */
 
 var express = function() {
     console.log("This variable holds a function")
 }// assigns the variable express to an anonymous function
+(() => {
+    console.log("This function is called immediately")
+})(); // an arrow function that is immediately called after definition.
 
 // SCOPE //
 /* Scope refers to the location in code where variables are accessible. There is global scope and 

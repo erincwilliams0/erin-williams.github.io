@@ -1,22 +1,36 @@
 /**
- * STRING-MANIPULATION
- * 
+ * STRING-MANIPULATION:
+ * 0. There are a number of operators and methods that manipulate strings.
+ * 1. Operators such as the concatenation operator help build up strings by combining 
+ strings, also the typeof and instanceof operators used to return data types 
+ can be used on strings.
+ * 2. Methods when used with strings can transform them, return portions of strings, 
+ and locate the index at which a substring occurs in a string. The method 
+ toUpperCase/toLowerCase can be used to transform strings, and are useful when
+ needed to make code case insensitive. Slice can return a portion of a string 
+ taking in two arguments refering to indexes of the specified string. The
+ indexof method takes in a substring and returns the index of the its first occurence 
+ in a string. The charAt method takes in an index and will return the character located
+ at the said index in the string.
  * 
  */
 
-// CONCATENATION OPERATOR //
+//  OPERATORS //
 /* The concatenation operators + and += work with strings. These operators concatenate or join two 
-different strings together or even a string and a number.
+different strings together or even a string and a number. Typeof is an unary operator that evaluates
+a value and returns a string of the values data type, and can be used on strings.
+
 */
 
 var smsg = "let's go"
 msg += " to the store"
 console.log(msg); // => prints "let's go to the store"
 var steakSauce = "A" + 1;
-console.log(steakSauce); // => prints A1 //note: when using concatenation on a string and a number a string is returned
+console.log(steakSauce); // => prints A1 
+console.log(typeof steakSauce); // => prints string
 
 // length //
-/* The length method will return the length of a string.
+/* The length property will return the length of a string.
 */
 
 var str = "this is a string"

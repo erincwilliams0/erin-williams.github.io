@@ -31,7 +31,9 @@ function sum(x, y){
 sum(3, 2); // => 3, 2 are arguments passed to the function sum
 
 // FUNCTION DECLARATION //
-/* All function declarations are named functions. 
+/* All function declarations are named functions. A named function starts off with the "function"
+key word, followed by parentheses holding any parameters used in the function then ends with the 
+code block or set of instructions to carry out when the function is called.
 */
 
 function declare() {
@@ -40,7 +42,9 @@ function declare() {
 // => a function declaration must be a named function
 
 // FUNCTION EXPRESSIONS //
-/* 
+/* There are anonymous functions created by function expression. A function expression can refer to 
+a function that is stored in a variable. Anonymous functions can be passed into other functions as
+arguments or even returned from functions.
 */
 
 var express = function() {
@@ -48,7 +52,9 @@ var express = function() {
 }// assigns the variable express to an anonymous function
 
 // SCOPE //
-/* 
+/* Scope refers to the location in code where variables are accessible. There is global scope and 
+there is local/blocked scope. A variable created in the context of a functions code block can only
+be accessed in that functions scope.
 */
 
 var num = 2

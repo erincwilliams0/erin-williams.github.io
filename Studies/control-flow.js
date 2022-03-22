@@ -1,13 +1,24 @@
 /**
- * CONTROL-FLOW
- * 
- * 
+ * CONTROL-FLOW:
+ * 0. Control flow refers to the order in which code is executed. The order in which code runs starts at the first
+ line moving down until the last line.
+ * 1. With conditional statments a programmer can control the order to which code is executed. If statements 
+ indicated by the keyword "if" takes in a condition and a code block wrapped in curly brackets, but only runs
+ the code if the condition results in a truthy value.
+ * 2. In the event that an if statement results to a falsy value, an else if statement may be used to run a 
+ different condition that executes its own instructions when resulting in a truthy value.
+ * 3. Else statements may be used as a sort of default statement to execute in the case of the preceding if, 
+ else if statements evaluating to a falsy value;
+ * 4. In some circumstances a switch statement may be used to replace an if else-if else conditional chain.
+ Switch statements evaluate an expression looking for any matching cases defined in its code block and may 
+ take in a default case that works similarly to an else statement.
+ *
  */
 
 // If //
 /* Starts with the keyword if then test a condition that evaluates to true or false followed by a code block to run
 if the condition evaluates to true. When an if statement evaluates to false and there are no following conditionals 
-nothing is executed and the program moves on the the next line
+no code block is executed and the program moves on the the next line
 */
 
 var hungry = false;

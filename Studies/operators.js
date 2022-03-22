@@ -66,4 +66,4 @@ used as a more elegant alternative to the if ... else statements. A Conditional 
 condition followed by a question mark, then comes a truthy and falsy expressions to execute seperated by a colon.
 */
 
-console.log(27 > 25 ? "Correct" : "Incorrect") // prints Correct
+console.log(27 > 25 ? "true" : "false") // prints true

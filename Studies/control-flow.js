@@ -50,4 +50,17 @@ finds a matching case, it executes code until a break statement is reached. A de
 when no matching cases are found similarly to an else statement. 
 */
 
-var 
+var craving = "sandwich"
+switch(craving) {
+    case "noodles":
+        console.log("Ramen");
+        break;
+    case "sandwich":
+        console.log("Poboys");
+        break;
+    case "Chinese":
+        console.log("General Tso Chicken");
+        break;
+    default:
+        console.log("Eggs")
+}

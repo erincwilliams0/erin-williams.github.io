@@ -10,7 +10,7 @@
  * 1. There's two steps to assigning a variable, the first being declaration using either var,
  * let, or const keywords followed by the variable name and a semicolon. The second step is 
  * initializing, or assigning the variable by inputting the variable name then the assignment
- *  operator "=" followed by the data we wish to store.
+ *  operator "=" followed by the data intended to store.
  * 2. Up until ES5 the var keyword was the only method for assigning variables, then ES6 
  * introduced the let and const keywords. While var, let, and const, are all used for storing 
  * variables, there are differences in how they operate. 

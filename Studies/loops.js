@@ -1,7 +1,23 @@
 /**
  * LOOPS:
- * 
- * 
+ * 0. Loops offer a simple way to repeatedly execute code for a desired result and affect the 
+ control flow of the code. There are multiple types of that loops fundamentally do the same 
+ thing, but have different conditions to meet. 
+ * 1. While loops contains a condition holding an expression and will continue to run until 
+ the condition results to a falsy value. When using a while loop the code block needs to 
+ contain instructions to modify the expression used in the condition or else an infinite loop 
+ may occur.
+ * 2. For loops begins with the "for" keyword and in parentheses contain smultiple expressions used
+ as a starting point, a condition that indicates when to end the loop, and a increment expression
+ that modifies the expression evaluated in the condition. It is imperative to pay close attention
+ to the condition and increment expressions, if the incrementer moves the expression in a way where 
+ the condition will never be met that an infinite loop can cause your code to crash.
+ * 3. For loops provide a straight forward method to looping over an array. In to accomplish a loop
+ over an array with for, you simply must specify in either the initial expression or condition that 
+ you are using the length of an array to loop over.
+ * 4. For in loops are used with objects and work somewhat differently than other loops. Instead of 
+ having to input a condition to stop the loop, a for in loop will repeat for every property stored 
+ in an object.
  */
 
 // WHILE LOOP //

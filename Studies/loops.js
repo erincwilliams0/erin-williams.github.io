@@ -35,7 +35,11 @@ while(num >= 0){
 
 // FOR LOOP //
 /* Starts with the keyword "for" followed by parenthesis consisting of an initial expression,
-a conditional expression, and an increment expression and ends with a statement or code block.
+a conditional expression, an increment expression and ends with a statement or code block.
+The initial expression is a counting variable that is modified by the increment expression, 
+either by incrementing or decrementing the initial expressions value each time the loop runs. 
+The code block contains the instructions to run for every iteration and the conditional 
+value checks the counting variable to determine when to exit the loop.
 */
 
 var array = ['a', 'b', 'c', 'd', 'e', 'f']

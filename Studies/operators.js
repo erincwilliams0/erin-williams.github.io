@@ -26,20 +26,33 @@ myAge += 2; // addition assignment operator
 console.log(myAge) // prints 29 to the console
 
 // 2. Arithmetic Operators //
-/* Arithmetic operators take in numbers as operands and return a single numerical value.
-Parenthesis can be used to help with the order of operations in code as well.
+/* Arithmetic operators work with numbers as operands performing arithmetic in code then
+return a single numerical value. Basic arithmetic operators include addition, subtraction, 
+multiplication, and division. The modulo or remainder operator "%" returns the remainder
+left over from diving one number by another, or zero when no remainder exist. The exponential
+operator "**" returns a number raised to power of another number. Parenthesis can be used to 
+help with the order of operations in code as well.
 */
 
-var math = (10 * 2) / 4;
-console.log(math) // prints 5 to the console
+var math = (10 * 8) / 4;
+console.log(math) // prints 20 to the console
+console.log(math % 6); // prints 2 to the console
+console.log(4 ** 3); // prints 64 to the console
 
 // 3. Comparison Operators //
-/* Comparison operators compare two operands and return a Boolean value based on its truthiness.
-
+/* Comparison operators return either true or false based on results of a comparison of two operands.
+ The greater than and less than ">"/"<" operators determine whether the left operand is larger or smaller than
+ the operand on its right. There are the equal "==" and not equal "!=" operators that respectively return true 
+ when operands are of equal value or are not of equal value. Generally it is adviced to use the strict equals or
+ strict not equals "==="/"!==" operators over the previous since these take into account the type as well as the
+ value of its operands.
 */
 
 console.log(32 > 2) // prints true
-console.log("Cat" === "cat") // prints false
+console.log(math <= 20) // prints true
+// math is an expression that evaluates to 20, this comparison determines wheter 20 is less than or equal to 20
+console.log("2" == 2) // prints true
+console.log("2" === 2) // prints false
 
 // 4. Logical Operators //
 /* Logical operators generally work with Boolean values. The Logical And operator "&&" returns 

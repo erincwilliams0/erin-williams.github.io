@@ -42,8 +42,8 @@ into a new array and returned.
 */
 
 var positive = true;
-//console.log(typeof myNum === "number") // => true
-
+console.log(typeof myNum === "number") // => true
+console.log(27 < 17) // => false
 
 // ARRAY //
 /* Arrays are a complex data type that contain a number of values enclosed in brackets. Arrays are zero indexed meaning that the 
